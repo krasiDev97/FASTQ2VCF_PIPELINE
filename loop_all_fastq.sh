@@ -1,3 +1,5 @@
+#These are three types of calling FASTQ files, depending on your naming system or formating.
+
 
 mkdir -p fastqc_results
 
