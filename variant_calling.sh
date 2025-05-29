@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Reference genome
-REF="/home/pc/Documents/ncbi_dataset/data/GCF_000499845.2/GCF_000499845.2_P._vulgaris_v2.0_genomic.fna"
-BAMfiles ="/media/pc/748AFB828AFB3EE4/GWAS_DArT_COMMON_BEAN/200-300/BAM_files" 
+REF=""
+BAMfiles ="" 
 # Create output directory
 mkdir -p vcf
 
