@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Directory where your BAM files are located
-BAM_DIR="/media/pc/748AFB828AFB3EE4/GWAS - DArT - COMMON BEAN/140-159/BAM files"
+BAM_DIR=""
 
 # Directory where the sorted BAM files will be stored
-SORTED_BAM_DIR="/media/pc/748AFB828AFB3EE4/GWAS - DArT - COMMON BEAN/140-159/BAM files/sorted"
+SORTED_BAM_DIR=""
 
 # Create output directory if it doesn't exist
 mkdir -p "$SORTED_BAM_DIR"
