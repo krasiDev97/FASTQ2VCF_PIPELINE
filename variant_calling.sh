@@ -23,7 +23,7 @@ for BAM in *.sorted.bam; do
     echo "✅ VCF saved to vcf/${SAMPLE}.vcf"
 done
 
-echo "🎉 All variant calling complete. VCFs are in the 'vcf/' directory."
+echo " All variant calling complete. VCFs are in the 'vcf/' directory."
 
 
 
