@@ -25,18 +25,17 @@ multiqc fastqc_results -o multiqc_results
 
 
 #Index the .fasta.fai file which is the GENOME REFERENCE
-bwa index ""
-
+bwa index "/home/pc/Documents/ncbi_dataset/data/GCF_000499845.2/GCF_000499845.2_P._vulgaris_v2.0_genomic.fna"
 
 # Directory where your FASTQ files are located
-FASTQ_DIR=""
+FASTQ_DIR="/home/pc/Desktop/NGS_exp"
 
 # Directory where the results (BAM files) will be stored
-OUTPUT_DIR=""
+OUTPUT_DIR="/home/pc/Desktop/NGS_exp/BAM_files"
 mkdir -p $OUTPUT_DIR  # Create output directory if it doesn't exist
 
 # Path to the reference genome (make sure it's indexed)
-REFERENCE=""
+REFERENCE="/home/pc/Documents/ncbi_dataset/data/GCF_000499845.2/GCF_000499845.2_P._vulgaris_v2.0_genomic.fna"
 
 # Loop over all FASTQ files in the directory
 for FASTQ in "$FASTQ_DIR"/*.FASTQ; do
@@ -80,7 +79,7 @@ if [ ! -f "${REFERENCE}.fai" ]; then
 fi
 
 # Loop through sorted BAMs
-for BAM in *.sorted.bam; do
+for BAM in "$OUTPUT_DIR"/*.sorted.bam; do
     SAMPLE=$(basename "$BAM" .sorted.bam)
     echo "Calling variants for $SAMPLE..."
 
@@ -97,10 +96,6 @@ echo "🎉 All variant calling complete. VCFs are in the 'vcf/' directory."
 
 #FILTERING THE VCF FILES WITH OUR OWN MEASUREMENTS IF NEEDED
 
-#QUAL<30 for stricter quality
-#MQ<40 to remove variants with low mapping quality
-#QD<2.0 (if GATK-style VCFs with quality-by-depth)
-
 
 
 mkdir -p filtered_vcf
@@ -113,3 +108,10 @@ for vcf in *vcf/*.vcf; do
     echo "🔍 Filtered ${sample}.vcf → filtered_vcf/${sample}.filtered.vcf"
 done
 
+
+
+
+
+#QUAL<30 for stricter quality
+#MQ<40 to remove variants with low mapping quality
+#QD<2.0 (if GATK-style VCFs with quality-by-depth)
