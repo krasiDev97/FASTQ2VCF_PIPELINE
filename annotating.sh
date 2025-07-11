@@ -30,7 +30,7 @@ for vcf in "$input_vcf"/*.vcf; do
     [[ -e "$vcf" ]] || { echo "No .vcf files found in $input_vcf"; exit 1; }
 
     base=$(basename "$vcf" .vcf)
-    outvcf="$OUTPUT_DIR/${base}.annotated.vcf"
+    outvcf="$output_folder/${base}.annotated.vcf"
 
     echo "Annotating: $base.vcf"
     java -Xmx4g -jar "$snpEff_jar" -v "$reference_genome" "$vcf" > "$output_folder"
