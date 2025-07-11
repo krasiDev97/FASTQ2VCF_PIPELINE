@@ -1,7 +1,7 @@
 # FASTQ2VCF_PIPELINE
 Pipeline for .FASTQ files after sequencing.
 
-The pipeline.sh program does everything automated from step 1 to step 7, without the trimming and annotating, so if you are not sure about those steps to make them individually and with finer tunning.
+    The pipeline.sh program does everything automated from step 1 to step 7, without the trimming and annotating, so if you are not sure about those steps to make them individually and with finer tunning.
 
 1.Doing a qulity check with FastQC.  
 
@@ -19,9 +19,9 @@ The pipeline.sh program does everything automated from step 1 to step 7, without
 
 7.Filtering the new .vcf files.  
 
-8.Annotating the VCF files referenced to GTF or GFF files. Done with snpEff.
+    8.Annotating the VCF files referenced to GTF or GFF files. Done with snpEff.
 
-9. Convert the annotated VCf files into CSV(Comma separated) for easier visualisation and forward analysis. 
+    9. Convert the annotated VCf files into CSV(Comma separated) for easier visualisation and forward analysis. 
 
   
 
