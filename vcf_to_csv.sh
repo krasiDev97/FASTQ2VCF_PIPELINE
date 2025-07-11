@@ -1,9 +1,9 @@
 #!/bin/bash
 
-input_folder=/home/pc/Downloads/annotated_vcfs
-output_folder=/home/pc/Downloads/snpEff/annotated_csvs
+input_folder=//annotated_vcfs
+output_folder=//annotated_csvs
 
-# Create output directory
+# create output directory
 mkdir -p "$output_folder"
 
 for vcf in "$input_folder"/*.annotated.vcf; do
@@ -12,10 +12,10 @@ for vcf in "$input_folder"/*.annotated.vcf; do
 
     echo "Converting $vcf to $outfile"
 
-    # Write header
+    # write headers
     echo -e "CHROM,POS,REF,ALT,INFO" > "$outfile"
 
-    # Extract basic fields (adjust for deeper parsing later)
+    # extract basic fields (adjust for deeper parsing later)
     grep -v "^#" "$vcf" | awk -F'\t' '{split($8,a,";"); print $1","$2","$4","$5","a[1]}' >> "$outfile"
 done
 
