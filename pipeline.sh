@@ -19,7 +19,9 @@ done
 multiqc fastqc_results -o multiqc_results
 
 
-#--------------------------------------------------------------------------------
+# additional trimming is possible, if needed do it before aligning and check again with FastQC.
+
+#    --------------------------------------------------------------------------------
 
 #ALIGNING FASTQ FILES WITH THE REFERENCE GENOME
 
