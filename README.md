@@ -15,6 +15,8 @@ Pipeline for .FASTQ files after sequencing.
 
 7.Filtering the new .vcf files.  
 
+8.Additionally i have uploaded here a script for annotating the VCF files referenced to GTF or GFF files. Done with snpEff command.
+
   
 
 
