@@ -1,9 +1,11 @@
 # FASTQ2VCF_PIPELINE
 Pipeline for .FASTQ files after sequencing.
 
+The pipeline.sh program does everything automated from step 1 to step 7, without the trimming and annotating, so if you are not sure about those steps to make them individually and with finer tunning.
+
 1.Doing a qulity check with FastQC.  
 
-1.5 If after the quality check some adapters ruins on overrepresented sequences are vissible, you can use the trimming_command.sh
+1.5 If after the quality check some adapters are seen or overrepresented sequences are vissible, you can use the trimming_command.sh
 
 2.Making a general report on if multiple .FASTQ files went under quality control.  
 
