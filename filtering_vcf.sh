@@ -1,9 +1,13 @@
+#!/bin/bash
+
 mkdir -p filtered_vcf
 
 for vcf in *.vcf; do
     sample=$(basename "$vcf" .vcf)
 
-    bcftools filter -s LOWQUAL -e '%QUAL<20 || DP<10' "$vcf" > filtered_vcf/"${sample}.filtered.vcf"
+    bcftools view -v snps "$vcf" | \
+    bcftools filter -s LOWQUAL -e 'QUAL<30 || INFO/DP<10 || INFO/DP>30 || FILTER!="PASS"' \
+    > filtered_vcf/"${sample}.filtered.vcf"
 
     echo "🔍 Filtered ${sample}.vcf → filtered_vcf/${sample}.filtered.vcf"
 done
